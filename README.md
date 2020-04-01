@@ -1,26 +1,18 @@
 # Rails Tutorial
 
-DevCamp Portfolio Application is created by following the Dissecting Ruby on Rails 5 course to learn Rails.
+> DevCamp Portfolio Application is created by following the Dissecting Ruby on Rails 5 course to learn Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Features
 
-Things you may want to cover:
+- Portfolio
+- Blog
+- Drag and Drop Interface
+- Real-Time Chat Engine for Comments
 
-- Ruby version
+### Code Examples
 
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+```ruby
+def my_method
+puts "Hi, There"
+end
+```
