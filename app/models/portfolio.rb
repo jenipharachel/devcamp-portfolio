@@ -8,4 +8,12 @@ class Portfolio < ApplicationRecord
     end
 
     scope :react_js, -> {where(subtitle: "React JS")}
+
+    #data defaults callback
+    after_initialize :set_defaults
+
+    def set_defaults
+        self.main_image ||= 'https://via.placeholder.com/600X400'
+        self.thumb_image ||= 'https://via.placeholder.com/350X200'
+    end
 end
