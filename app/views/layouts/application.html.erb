@@ -15,20 +15,20 @@
   </head>
 
   <body>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
 
       <%= render "shared/application_nav" %>
     
       <%= yield %>
 
-      <footer class="mastfoot mx-auto">
+      <footer class="mastfoot mt-auto">
         <div class="inner">
           <%= copyright_generator %>
         </div>
       </footer>
 
       <%= source_helper("application") %>
-  </div>
+    </div>
     
   </body>
 </html>
