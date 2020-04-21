@@ -21,11 +21,7 @@
     
       <%= yield %>
 
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <%= copyright_generator %>
-        </div>
-      </footer>
+      <%= render "shared/application_footer" %>
 
       <%= source_helper("application") %>
     </div>
