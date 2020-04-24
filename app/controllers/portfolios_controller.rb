@@ -1,10 +1,19 @@
 class PortfoliosController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_portfolio_items, only: [:edit, :update, :show, :destroy]
   layout "portfolio"
   access all: [:show, :index, :react], user: {except: [:destroy, :new, :create, :edit, :update]}, site_admin: :all
 
     def index
         @portfolio_items = Portfolio.by_position
+    end
+
+    def sort
+      params[:order].each do |key, value|
+        Portfolio.find(value[:id]).update(position: value[:position])
+      end
+
+      head :ok
     end
 
     def react
