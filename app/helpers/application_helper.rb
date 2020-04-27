@@ -44,7 +44,7 @@ module ApplicationHelper
       },
     ]
   end
-  
+
   def nav_helper style, tag_type
     nav_links = ''
     nav_items.each do |item|
@@ -58,6 +58,15 @@ module ApplicationHelper
     "active" if current_page? path
   end
 
-    
+  def alerts
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
 
+    if alert
+      alert_generator alert 
+    end
+  end
+
+  def alert_generator msg
+    js add_gritter(msg, title: "Jenipha Rachel Portfolio", sticky: false)
+  end
 end
