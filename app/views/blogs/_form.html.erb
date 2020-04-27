@@ -12,13 +12,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "form-control" %>
+    <%= form.text_field :title, class: "form-control", placeholder: 'Title' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :body %>
-    <%= form.text_area :body, class: "form-control", rows:"10" %>
+    <%= form.text_area :body, class: "form-control", rows:"10", placeholder: 'Content' %>
   </div>
 
   <div class="form-group">
@@ -28,5 +26,22 @@
 
   <div class="form-group">
     <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+#how form_tag works
+<%= form_tag(blogs_path) do %>
+  <div class='form-group'>
+    <%= label_tag 'title', 'Blog title' %>
+    <%= text_field_tag 'title', blog.title, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= label_tag 'body', 'Blog Content' %>
+    <%= text_area_tag 'body', blog.body, class: 'form-control', rows: 10 %>
+  </div>
+
+  <div class='form-group'>
+    <%= submit_tag 'Save', class: 'btn btn-primary' %>
   </div>
 <% end %>
