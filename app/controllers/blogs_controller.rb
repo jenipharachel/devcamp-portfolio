@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
     if logged_in?(:site_admin)
       @blogs = Blog.recent_blogs.page(params[:page]).per(5)
     else
-      @blogs = Blog.recent_blogs.published_blogs.page(params[:page]).per(5)
+      @blogs = Blog.recent_blogs.published.page(params[:page]).per(5)
     end
     @page_title = "My Portfolio Blogs"
   end
